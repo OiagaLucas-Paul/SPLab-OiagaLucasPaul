@@ -1,0 +1,36 @@
+<html lang="en">
+<body>
+<h1>All Books</h1>
+<a href="javascript:void(0)" onclick="sendRequest()">Fetch Books</a>
+<div id="sseDiv"></div>
+
+<script>
+    let source = null;
+
+    function sendRequest() {
+        fetch("http://localhost:8081/books")
+            .then(r => r.json())
+            .then(books => {
+                const div = document.getElementById("sseDiv");
+                div.innerHTML = "";
+                books.forEach(b => div.innerHTML += "INIT: " + b.id + " - " + b.title + "<br>");
+            });
+
+        if (typeof (EventSource) !== "undefined") {
+            if (source === null) {
+                source = new EventSource("http://localhost:8081/books-sse");
+                source.onmessage = function (event) {
+                    const data = JSON.parse(event.data);
+                    document.getElementById("sseDiv").innerHTML +=
+                        "NEW: " + data.id + " - " + data.title + "<br>";
+                };
+            }
+        } else {
+            document.getElementById("sseDiv").innerHTML =
+                "Your browser does not support server-sent events.";
+        }
+    }
+</script>
+
+</body>
+</html>

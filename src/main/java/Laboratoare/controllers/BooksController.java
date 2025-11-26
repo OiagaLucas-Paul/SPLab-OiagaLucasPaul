@@ -1,5 +1,6 @@
 package Laboratoare.controllers;
 
+import Laboratoare.model.Book;
 import Laboratoare.async.AsyncCommandResult;
 import Laboratoare.async.AsyncCommandStore;
 import Laboratoare.async.AsyncStatus;
@@ -37,14 +38,15 @@ public class BooksController {
     // --------- SYNCHRONOUS (GETs) ---------
 
     @GetMapping
-    public List<String> getAllBooks() {
+    public List<Book> getAllBooks() {
         return synchronousCommandExecutor.execute(new GetAllBooksCommand(booksService));
     }
 
     @GetMapping("/{id}")
-    public String getBook(@PathVariable int id) {
+    public Book getBook(@PathVariable int id) {
         return synchronousCommandExecutor.execute(new GetBookByIdCommand(booksService, id));
     }
+
 
     // --------- ASYNCHRONOUS (POST / PUT / DELETE) ---------
 

@@ -1,9 +1,12 @@
 package Laboratoare.commands;
 
+import Laboratoare.model.Book;
 import Laboratoare.service.BooksService;
+
 import java.util.List;
 
-public class GetAllBooksCommand implements Command<List<String>> {
+public class GetAllBooksCommand implements Command<List<Book>> {
+
     private final BooksService booksService;
 
     public GetAllBooksCommand(BooksService booksService) {
@@ -11,8 +14,7 @@ public class GetAllBooksCommand implements Command<List<String>> {
     }
 
     @Override
-    public List<String> execute() {
+    public List<Book> execute() {
         return booksService.getAllBooks();
     }
 }
-
