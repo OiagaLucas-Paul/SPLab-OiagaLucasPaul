@@ -3,6 +3,7 @@ package Laboratoare.commands;
 import Laboratoare.service.BooksService;
 
 public class DeleteBookCommand implements Command<Void> {
+
     private final BooksService booksService;
     private final int id;
 

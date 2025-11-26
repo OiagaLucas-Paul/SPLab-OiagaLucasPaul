@@ -1,37 +1,43 @@
 package Laboratoare.service;
 
+import Laboratoare.model.Book;
+import Laboratoare.persistence.CrudRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.ArrayList;
 
 @Service
 public class BooksService {
 
-    private final List<String> books = new ArrayList<>();
+    private final CrudRepository<Book, Integer> booksRepository;
 
-    public BooksService() {
-        books.add("Dummy Book 1");
-        books.add("Dummy Book 2");
+    public BooksService(CrudRepository<Book, Integer> booksRepository) {
+        this.booksRepository = booksRepository;
     }
 
-    public List<String> getAllBooks() {
-        return books;
+    public List<Book> getAllBooks() {
+        return booksRepository.findAll();
     }
 
-    public String getBook(int id) {
-        if (id >= 0 && id < books.size()) return books.get(id);
-        return null;
+    public Book getBook(int id) {
+        return booksRepository.findById(id).orElse(null);
     }
 
-    public void addBook(String book) {
-        books.add(book);
+    public Book addBook(String title) {
+        Book book = new Book(title);
+        return booksRepository.save(book);
     }
 
-    public void updateBook(int id, String newBook) {
-        if (id >= 0 && id < books.size()) books.set(id, newBook);
+    public Book updateBook(int id, String newTitle) {
+        return booksRepository.findById(id)
+                .map(existing -> {
+                    existing.setTitle(newTitle);
+                    return booksRepository.save(existing);
+                })
+                .orElse(null);
     }
 
     public void deleteBook(int id) {
-        if (id >= 0 && id < books.size()) books.remove(id);
+        booksRepository.deleteById(id);
     }
 }
