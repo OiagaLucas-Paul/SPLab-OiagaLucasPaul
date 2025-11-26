@@ -1,19 +1,19 @@
 package Laboratoare.commands;
 
+import Laboratoare.model.Book;
 import Laboratoare.service.BooksService;
 
-public class CreateBookCommand implements Command<Void> {
+public class CreateBookCommand implements Command<Book> {
     private final BooksService booksService;
-    private final String book;
+    private final String title;
 
-    public CreateBookCommand(BooksService booksService, String book) {
+    public CreateBookCommand(BooksService booksService, String title) {
         this.booksService = booksService;
-        this.book = book;
+        this.title = title;
     }
 
     @Override
-    public Void execute() {
-        booksService.addBook(book);
-        return null;
+    public Book execute() {
+        return booksService.addBook(title);
     }
 }

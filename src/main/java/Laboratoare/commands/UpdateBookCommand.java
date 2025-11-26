@@ -1,21 +1,22 @@
 package Laboratoare.commands;
 
+import Laboratoare.model.Book;
 import Laboratoare.service.BooksService;
 
-public class UpdateBookCommand implements Command<Void> {
+public class UpdateBookCommand implements Command<Book> {
+
     private final BooksService booksService;
     private final int id;
-    private final String newBook;
+    private final String newTitle;
 
-    public UpdateBookCommand(BooksService booksService, int id, String newBook) {
+    public UpdateBookCommand(BooksService booksService, int id, String newTitle) {
         this.booksService = booksService;
         this.id = id;
-        this.newBook = newBook;
+        this.newTitle = newTitle;
     }
 
     @Override
-    public Void execute() {
-        booksService.updateBook(id, newBook);
-        return null;
+    public Book execute() {
+        return booksService.updateBook(id, newTitle);
     }
 }
