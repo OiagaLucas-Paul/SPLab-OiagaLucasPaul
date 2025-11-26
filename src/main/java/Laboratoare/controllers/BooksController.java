@@ -1,5 +1,6 @@
 package Laboratoare.controllers;
 
+import Laboratoare.model.Book;
 import Laboratoare.async.AsyncCommandResult;
 import Laboratoare.async.AsyncCommandStore;
 import Laboratoare.async.AsynchronousCommandExecutor;
@@ -46,7 +47,8 @@ public class BooksController {
         return synchronousCommandExecutor.execute(new GetBookByIdCommand(booksService, id));
     }
 
-    // ---------- ASYNCHRONOUS (POST / PUT / DELETE) ----------
+
+    // --------- ASYNCHRONOUS (POST / PUT / DELETE) ---------
 
     @PostMapping
     public ResponseEntity<AsyncRequestAcceptedResponse> createBook(@RequestBody String title) {

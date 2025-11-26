@@ -1,6 +1,7 @@
 package Laboratoare.service;
 
 import Laboratoare.model.Book;
+import Laboratoare.observer.AllBooksSubject;
 import Laboratoare.persistence.CrudRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,12 @@ import java.util.List;
 public class BooksService {
 
     private final CrudRepository<Book, Integer> booksRepository;
+    private final AllBooksSubject allBooksSubject;
 
-    public BooksService(CrudRepository<Book, Integer> booksRepository) {
+    public BooksService(CrudRepository<Book, Integer> booksRepository,
+                        AllBooksSubject allBooksSubject) {
         this.booksRepository = booksRepository;
+        this.allBooksSubject = allBooksSubject;
     }
 
     public List<Book> getAllBooks() {
@@ -25,14 +29,20 @@ public class BooksService {
 
     public Book addBook(String title) {
         Book book = new Book(title);
-        return booksRepository.save(book);
+        Book saved = booksRepository.save(book);
+
+        allBooksSubject.add(saved);
+
+        return saved;
     }
 
     public Book updateBook(int id, String newTitle) {
         return booksRepository.findById(id)
                 .map(existing -> {
                     existing.setTitle(newTitle);
-                    return booksRepository.save(existing);
+                    Book saved = booksRepository.save(existing);
+                    allBooksSubject.add(saved);
+                    return saved;
                 })
                 .orElse(null);
     }
