@@ -2,11 +2,11 @@ package Laboratoare.controllers;
 
 import Laboratoare.async.AsyncCommandResult;
 import Laboratoare.async.AsyncCommandStore;
-import Laboratoare.async.AsyncStatus;
 import Laboratoare.async.AsynchronousCommandExecutor;
 import Laboratoare.commands.*;
 import Laboratoare.dto.AsyncCommandStatusResponse;
 import Laboratoare.dto.AsyncRequestAcceptedResponse;
+import Laboratoare.model.Book;
 import Laboratoare.service.BooksService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,24 +34,24 @@ public class BooksController {
         this.asyncCommandStore = asyncCommandStore;
     }
 
-    // --------- SYNCHRONOUS (GETs) ---------
+    // ---------- SYNCHRONOUS (GET) ----------
 
     @GetMapping
-    public List<String> getAllBooks() {
+    public List<Book> getAllBooks() {
         return synchronousCommandExecutor.execute(new GetAllBooksCommand(booksService));
     }
 
     @GetMapping("/{id}")
-    public String getBook(@PathVariable int id) {
+    public Book getBook(@PathVariable int id) {
         return synchronousCommandExecutor.execute(new GetBookByIdCommand(booksService, id));
     }
 
-    // --------- ASYNCHRONOUS (POST / PUT / DELETE) ---------
+    // ---------- ASYNCHRONOUS (POST / PUT / DELETE) ----------
 
     @PostMapping
-    public ResponseEntity<AsyncRequestAcceptedResponse> createBook(@RequestBody String book) {
+    public ResponseEntity<AsyncRequestAcceptedResponse> createBook(@RequestBody String title) {
         UUID requestId = asynchronousCommandExecutor.submit(
-                new CreateBookCommand(booksService, book)
+                new CreateBookCommand(booksService, title)
         );
 
         AsyncRequestAcceptedResponse body = new AsyncRequestAcceptedResponse(requestId);
@@ -64,9 +64,9 @@ public class BooksController {
 
     @PutMapping("/{id}")
     public ResponseEntity<AsyncRequestAcceptedResponse> updateBook(@PathVariable int id,
-                                                                   @RequestBody String newBook) {
+                                                                   @RequestBody String newTitle) {
         UUID requestId = asynchronousCommandExecutor.submit(
-                new UpdateBookCommand(booksService, id, newBook)
+                new UpdateBookCommand(booksService, id, newTitle)
         );
 
         AsyncRequestAcceptedResponse body = new AsyncRequestAcceptedResponse(requestId);
@@ -90,8 +90,6 @@ public class BooksController {
                 .location(URI.create("/books/requests/" + requestId))
                 .body(body);
     }
-
-    // --------- POLLING STATUS FOR ASYNC REQUESTS ---------
 
     @GetMapping("/requests/{requestId}")
     public ResponseEntity<AsyncCommandStatusResponse> getAsyncStatus(@PathVariable UUID requestId) {

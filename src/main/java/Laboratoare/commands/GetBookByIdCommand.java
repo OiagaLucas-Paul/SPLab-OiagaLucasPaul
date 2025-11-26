@@ -1,8 +1,10 @@
 package Laboratoare.commands;
 
+import Laboratoare.model.Book;
 import Laboratoare.service.BooksService;
 
-public class GetBookByIdCommand implements Command<String> {
+public class GetBookByIdCommand implements Command<Book> {
+
     private final BooksService booksService;
     private final int id;
 
@@ -12,7 +14,7 @@ public class GetBookByIdCommand implements Command<String> {
     }
 
     @Override
-    public String execute() {
+    public Book execute() {
         return booksService.getBook(id);
     }
 }
