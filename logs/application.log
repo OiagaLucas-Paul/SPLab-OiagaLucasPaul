@@ -1,76 +1,23 @@
-2025-11-21 14:39:17.505  INFO 13336 --- [main] Laboratoare.MySpringApplication          : Starting MySpringApplication on DESKTOP-68P2GC7 with PID 13336 (C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul\build\classes\java\main started by lucas in C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul)
-2025-11-21 14:39:17.507  INFO 13336 --- [main] Laboratoare.MySpringApplication          : No active profile set, falling back to default profiles: default
-2025-11-21 14:39:18.021  INFO 13336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-11-21 14:39:18.026  INFO 13336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-21 14:39:18.026  INFO 13336 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2025-11-21 14:39:18.077  INFO 13336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-21 14:39:18.077  INFO 13336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 543 ms
-2025-11-21 14:39:18.168  INFO 13336 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2025-11-21 14:39:18.260  INFO 13336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2025-11-21 14:39:18.266  INFO 13336 --- [main] Laboratoare.MySpringApplication          : Started MySpringApplication in 0.982 seconds (JVM running for 1.393)
-2025-11-21 14:39:23.047  INFO 13336 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-21 14:39:23.047  INFO 13336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-21 14:39:23.050  INFO 13336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-11-21 14:39:23.054  INFO 13336 --- [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 14:39:23.085  INFO 13336 --- [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 14:39:25.944  INFO 13336 --- [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 14:39:25.946  INFO 13336 --- [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 14:39:31.961  INFO 13336 --- [http-nio-8080-exec-4] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 14:39:31.964  INFO 13336 --- [http-nio-8080-exec-4] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 14:39:37.183  INFO 13336 --- [http-nio-8080-exec-5] L.filters.RequestLoggingFilter           : Before processing request: GET /
-2025-11-21 14:39:37.185  INFO 13336 --- [http-nio-8080-exec-5] L.filters.RequestLoggingFilter           : After processing request: GET /
-2025-11-21 16:06:26.676  INFO 13336 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2025-11-21 16:06:29.465  INFO 24116 --- [main] Laboratoare.MySpringApplication          : Starting MySpringApplication on DESKTOP-68P2GC7 with PID 24116 (C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul\build\classes\java\main started by lucas in C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul)
-2025-11-21 16:06:29.470  INFO 24116 --- [main] Laboratoare.MySpringApplication          : No active profile set, falling back to default profiles: default
-2025-11-21 16:06:30.077  INFO 24116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-11-21 16:06:30.084  INFO 24116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-21 16:06:30.085  INFO 24116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2025-11-21 16:06:30.137  INFO 24116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-21 16:06:30.137  INFO 24116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 623 ms
-2025-11-21 16:06:30.232  INFO 24116 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2025-11-21 16:06:30.346  INFO 24116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2025-11-21 16:06:30.354  INFO 24116 --- [main] Laboratoare.MySpringApplication          : Started MySpringApplication in 1.309 seconds (JVM running for 1.757)
-2025-11-21 16:06:34.467  INFO 24116 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-21 16:06:34.467  INFO 24116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-21 16:06:34.470  INFO 24116 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-11-21 16:06:34.474  INFO 24116 --- [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:06:34.507  INFO 24116 --- [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:06:40.148  INFO 24116 --- [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:06:40.150  INFO 24116 --- [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:17:28.661  INFO 24116 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2025-11-21 16:17:31.219  INFO 3296 --- [main] Laboratoare.MySpringApplication          : Starting MySpringApplication on DESKTOP-68P2GC7 with PID 3296 (C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul\build\classes\java\main started by lucas in C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul)
-2025-11-21 16:17:31.222  INFO 3296 --- [main] Laboratoare.MySpringApplication          : No active profile set, falling back to default profiles: default
-2025-11-21 16:17:31.804  INFO 3296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-11-21 16:17:31.810  INFO 3296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-21 16:17:31.810  INFO 3296 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2025-11-21 16:17:31.865  INFO 3296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-21 16:17:31.865  INFO 3296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 603 ms
-2025-11-21 16:17:31.967  INFO 3296 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2025-11-21 16:17:32.072  INFO 3296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2025-11-21 16:17:32.078  INFO 3296 --- [main] Laboratoare.MySpringApplication          : Started MySpringApplication in 1.195 seconds (JVM running for 1.615)
-2025-11-21 16:17:58.621  INFO 3296 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-21 16:17:58.621  INFO 3296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-21 16:17:58.624  INFO 3296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-11-21 16:17:58.629  INFO 3296 --- [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:17:58.661  INFO 3296 --- [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:18:16.569  INFO 3296 --- [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : Before processing request: GET /books/0
-2025-11-21 16:18:16.579  INFO 3296 --- [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : After processing request: GET /books/0
-2025-11-21 16:18:20.011  INFO 3296 --- [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : Before processing request: GET /books/2
-2025-11-21 16:18:20.013  INFO 3296 --- [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : After processing request: GET /books/2
-2025-11-21 16:18:24.832  INFO 3296 --- [http-nio-8080-exec-4] L.filters.RequestLoggingFilter           : Before processing request: GET /books/1
-2025-11-21 16:18:24.834  INFO 3296 --- [http-nio-8080-exec-4] L.filters.RequestLoggingFilter           : After processing request: GET /books/1
-2025-11-21 16:18:47.929  INFO 3296 --- [http-nio-8080-exec-6] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:18:47.930  INFO 3296 --- [http-nio-8080-exec-6] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:18:53.326  INFO 3296 --- [http-nio-8080-exec-7] L.filters.RequestLoggingFilter           : Before processing request: POST /books
-2025-11-21 16:18:53.341  INFO 3296 --- [http-nio-8080-exec-7] L.filters.RequestLoggingFilter           : After processing request: POST /books
-2025-11-21 16:19:00.674  INFO 3296 --- [http-nio-8080-exec-8] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:19:00.675  INFO 3296 --- [http-nio-8080-exec-8] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:20:40.896  INFO 3296 --- [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : Before processing request: PUT /books/1
-2025-11-21 16:20:40.898  INFO 3296 --- [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : After processing request: PUT /books/1
-2025-11-21 16:20:43.048  INFO 3296 --- [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:20:43.050  INFO 3296 --- [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:21:00.072  INFO 3296 --- [http-nio-8080-exec-4] L.filters.RequestLoggingFilter           : Before processing request: DELETE /books/1
-2025-11-21 16:21:00.074  INFO 3296 --- [http-nio-8080-exec-4] L.filters.RequestLoggingFilter           : After processing request: DELETE /books/1
-2025-11-21 16:21:02.200  INFO 3296 --- [http-nio-8080-exec-5] L.filters.RequestLoggingFilter           : Before processing request: GET /books
-2025-11-21 16:21:02.202  INFO 3296 --- [http-nio-8080-exec-5] L.filters.RequestLoggingFilter           : After processing request: GET /books
-2025-11-21 16:22:49.544  INFO 3296 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-11-26T17:19:24.565+02:00  INFO 23728 --- [demo] [main] Laboratoare.MySpringApplication          : Starting MySpringApplication using Java 21.0.3 with PID 23728 (C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul\build\classes\java\main started by lucas in C:\Users\lucas\Documents\GitHub\SPLab-OiagaLucasPaul)
+2025-11-26T17:19:24.573+02:00  INFO 23728 --- [demo] [main] Laboratoare.MySpringApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T17:19:25.206+02:00  INFO 23728 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-26T17:19:25.217+02:00  INFO 23728 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T17:19:25.217+02:00  INFO 23728 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2025-11-26T17:19:25.252+02:00  INFO 23728 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T17:19:25.252+02:00  INFO 23728 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 645 ms
+2025-11-26T17:19:25.508+02:00  INFO 23728 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-26T17:19:25.514+02:00  INFO 23728 --- [demo] [main] Laboratoare.MySpringApplication          : Started MySpringApplication in 1.494 seconds (process running for 2.105)
+2025-11-26T17:19:30.892+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-26T17:19:30.892+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-26T17:19:30.892+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-26T17:19:30.897+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : Before processing request: GET /
+2025-11-26T17:19:30.915+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-1] L.filters.RequestLoggingFilter           : After processing request: GET /
+2025-11-26T17:19:31.056+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : Before processing request: GET /favicon.ico
+2025-11-26T17:19:31.059+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-2] L.filters.RequestLoggingFilter           : After processing request: GET /favicon.ico
+2025-11-26T17:19:42.508+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : Before processing request: GET /
+2025-11-26T17:19:42.509+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-3] L.filters.RequestLoggingFilter           : After processing request: GET /
+2025-11-26T17:20:23.825+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-5] L.filters.RequestLoggingFilter           : Before processing request: GET /books
+2025-11-26T17:20:23.832+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-5] L.filters.RequestLoggingFilter           : After processing request: GET /books
+2025-11-26T17:20:36.169+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-6] L.filters.RequestLoggingFilter           : Before processing request: POST /books
+2025-11-26T17:20:36.175+02:00  WARN 23728 --- [demo] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<Laboratoare.dto.AsyncRequestAcceptedResponse> Laboratoare.controllers.BooksController.createBook(java.lang.String)]
+2025-11-26T17:20:36.175+02:00  INFO 23728 --- [demo] [http-nio-8080-exec-6] L.filters.RequestLoggingFilter           : After processing request: POST /books
