@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<body>
+<h1>All Movies</h1>
+
+<div id="list"></div>
+<hr>
+<div id="sseDiv"></div>
+
+<script>
+    let source = null;
+
+    function renderMovie(m) {
+      return `#${m.id} - ${m.title} (${m.releaseYear ?? ""})<br>`;
+    }
+
+    async function loadMovies() {
+      const res = await fetch("/movies");
+      const movies = await res.json();
+      document.getElementById("list").innerHTML = movies.map(renderMovie).join("");
+    }
+
+    function startSse() {
+      if (source) return;
+      source = new EventSource("/movies-sse");
+
+      source.addEventListener("movie-created", (event) => {
+        const m = JSON.parse(event.data);
+        document.getElementById("sseDiv").innerHTML += "NEW: " + renderMovie(m);
+      });
+
+      source.onmessage = (event) => {
+        const m = JSON.parse(event.data);
+        document.getElementById("sseDiv").innerHTML += "NEW: " + renderMovie(m);
+      };
+    }
+
+    loadMovies();
+    startSse();
+</script>
+</body>
+</html>
