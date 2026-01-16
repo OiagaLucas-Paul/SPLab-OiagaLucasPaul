@@ -1,0 +1,2 @@
+Subiectul Proiectului este o aplicatie de gestionare a filmelor cu Spring BOOT, cu actualizare in timp real prin SSE a filmelor.
+Acesta este similar cu cel facul in timpul laboratoarelor dar ajustat pentru aceasta tema.
